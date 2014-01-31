@@ -1,4 +1,6 @@
-Contributors -
+####Sinatra Flash Card Application
+
+###Contributors -
 
 Charlie Truong, charlietruong;
 
@@ -12,7 +14,7 @@ Shawn Klein,
 
 Gary
 
-Steps to Start Project -
+###Steps to Start Project -
 
 In Root Directory execute the following steps sequentially:
 
