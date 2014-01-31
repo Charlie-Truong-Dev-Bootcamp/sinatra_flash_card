@@ -9,4 +9,13 @@ class Card < ActiveRecord::Base
     cards.map{ |card| card.id }
   end
 
+  def check_answer(guess)
+    if answer.downcase == guess.downcase
+      return 1
+    elsif guess == ""
+      return 0
+    else
+      return -1
+    end
+  end
 end

@@ -1,31 +1,30 @@
 require 'pry'
 
 get "/round/:deck_id" do
+  session[:user_id] = 1
+  session[:round_id] = Round.create(user_id: session[:user_id]).id
   @cards = Card.create_deck(params[:deck_id])
   session[:cards] = @cards
   session[:num] = 0
-  @card = find_a_card ## i == counter, how pass one to the next?
-  # @at_count = session[:num]
-  # session[:correctness] = Array.new
-  ## instance variable to hold a card
-  ## get an answer for it
-  ## pop card off session[:cards]
-
+  @card = current_card
+  session[:correctness] = Array.new
   erb :rounds
 end
 
 post "/round/:deck_id" do
-  if find_a_card.answer == params[:answer]
-    # session[:correctness].push(1)
-  elsif params[:answer] == ""
-    # session[:correctness].push(0)
-  else
-    # session[:correctness].push(-1)
-  end
+  @feedback = current_card.check_answer(params[:answer])
+  @answer = current_card.answer
+  session[:correctness].push(@feedback)
   session[:num] += 1
-  # @at_count = session[:num]
-  @card = find_a_card
-  ## if not last card do this
-  erb :rounds
-  ## else rounte to erb :stats
+  if session[:num] < 10
+    @card = current_card
+    erb :rounds
+  else
+    Guess.add_guesses(session[:cards], session[:round_id], session[:correctness])
+    redirect ('/stats')
+  end
+end
+
+get '/stats' do
+  erb :stats
 end
