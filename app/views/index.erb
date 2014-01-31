@@ -1,21 +1,9 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Please sign in, or <a href="/sign_up">create an account</a></p>
 
+  <form class="form-signin" name="input" action="/decks" method="get">
+    <h2 class="form-signin-heading" style="text-align: center">Please sign in, or <a href="/sign_up">create an account</a></h2>
+    <input type="text" class="form-control" placeholder="Username" name="user" required autofocus>
+    <input type="password" class="form-control" placeholder="Password" name="password" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
 
-
-  <table>
-    <form name="input" action="html_form_action.asp" method="get">
-    <tr>
-      <td>Username: <input type="text" name="user"></td>
-    </tr>
-    <tr>
-      <td>Password: <input type="password" name="password"></td>
-    </tr>
-    <tr>
-      <td><input type="submit" value="Log In"></td>
-    </tr>
-    </form>
-  </table>
-
-</div>
