@@ -4,6 +4,6 @@ get '/stats' do
   @correct = round.guesses.where(correctness: 1).count
   @incorrect = round.guesses.where(correctness: -1).count
   @skipped = round.guesses.where(correctness: 0).count
-  @percent = (@correct / (@correct + @incorrect + @skipped).to_f) * 100.0
+  @percent = (@correct / (@correct + @incorrect + @skipped).to_f ) * 100.0
   erb :stats
 end
