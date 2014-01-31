@@ -1,10 +1,15 @@
 Contributors -
 
-Charlie Truong, charlietruong
+Charlie Truong, charlietruong;
+
 Sam Blackman,
+
 Junting,
-Lorena Mesa, lorenanicole
+
+Lorena Mesa, lorenanicole;
+
 Shawn Klein,
+
 Gary
 
 Steps to Start Project -
