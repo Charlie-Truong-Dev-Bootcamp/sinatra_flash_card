@@ -1,0 +1,16 @@
+
+<div class="container">
+
+  <h4>Your word is ... </h4>
+
+  <h2> <%= @card.question %> </h2>
+
+  <form action="/round/<%= @card.deck_id %>" method="post">
+    <input type="text" name="answer">
+    <input type="submit" value="Guess">
+    <input type="submit" value="Skip">
+  </form>
+
+<!--   <p> <%=@at_count %> </p> -->
+
+</div>

@@ -1,0 +1,14 @@
+
+<div class="container">
+
+  <h4>Choose a deck:</h4>
+
+  <ul>
+
+    <% @decks.each do |deck| %>
+    <li><a href="/round/<%= deck.id %>" > <%= deck.name %> </a></li>
+    <% end %>
+
+  </ul>
+
+</div>
