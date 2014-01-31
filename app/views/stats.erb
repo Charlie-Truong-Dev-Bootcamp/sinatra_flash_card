@@ -1,0 +1,13 @@
+<div class="container">
+  <%if @round_data %>
+    <div>
+      <div><h2>This round</h2></div>
+      <div>Correct: </div><div><% @round_data.correct %>, (<% @round_data.percent %>)%</div>
+      <div>Incorrect: </div><div><% @round_data.incorrect %></div>
+      <div>Skipped: </div><div><% @round_data.skipped %></div>
+    </div>
+  <% end %>
+  <a href = <%= "/round/" + @deck_id %>>Play this deck again</a>
+  <a href = "/decks">Choose another deck</a>
+  <a href = "/signout">Sign out</a>
+</div>
