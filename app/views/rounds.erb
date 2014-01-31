@@ -1,0 +1,26 @@
+
+<div class="container">
+
+  <%if @feedback == 1%>
+    <p>Correct!</p>
+  <%elsif @feedback == 0 %>
+    <p>You were lazy and skipped the question!</p>
+  <%elsif @feedback == nil%>
+    <p></p>
+  <%else%>
+    <p>Incorrect.  The answer was <%=@answer%></p>
+  <% end %>
+
+  <h4>Your word is ... </h4>
+
+  <h2> <%= @card.question %> </h2>
+
+  <form action="/round/<%= @card.deck_id %>" method="post">
+    <input type="text" name="answer">
+    <input type="submit" value="Guess">
+  <!--   <input type="submit" value="Skip"> -->
+  </form>
+
+
+
+</div>
