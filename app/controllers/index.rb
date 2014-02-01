@@ -1,7 +1,6 @@
 enable :sessions
 
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
@@ -11,15 +10,13 @@ end
 
 post '/sign_in' do
   attempted_user = User.where('username = ?', params[:user])[0]
-  if attempted_user == nil
-    redirect '/'
-  elsif attempted_user.password != params[:password]
-    redirect '/'
-  else
-    attempted_user.password == params[:password]
-    session[:username] = attempted_user[:username]
-    redirect '/decks'
+  if attempted_user
+    if attempted_user.password == params[:password]
+      session[:username] = attempted_user[:username]
+      redirect '/decks'
+    end
   end
+  redirect '/'
 end
 
 post '/sign_up' do
@@ -30,4 +27,7 @@ post '/sign_up' do
   redirect '/decks'
 end
 
-
+get '/log_out' do
+  session.clear
+  redirect '/'
+end
