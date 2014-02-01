@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body style='background-image:url(http://abs.twimg.com/images/themes/theme1/bg.png)'>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
@@ -36,13 +36,15 @@
     <a href="/log_out">Log out</a>
     <% end %>
   <div class="row">
-    <div class= "col-md-3"></div>
-    <div class= "col-md-6">
-        <div style='float: right;'>
-  </div>
+    <div class= "col-md-3">
+    </div>
+    <div class= "col-md-6" style='margin-top:80px;'>
+      <div style='float: right;'>
+      </div>
       <%= yield %>
     </div>
-    <div class= "col-md-3"></div>
+    <div class= "col-md-3">
+    </div>
   </div>
 </div>
 
