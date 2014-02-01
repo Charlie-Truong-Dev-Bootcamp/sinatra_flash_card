@@ -26,6 +26,10 @@
 
       <p class="navbar-styling">Flash Cards</p>
 
+      <% if session[:username] %>
+      <p style="float: right; color: white;">Hello, <%= session[:username] %>. I'm judging you.<br>Don't be ignant. ><</p>
+      <% end %>
+
     </div>
   </div>
 </div>
