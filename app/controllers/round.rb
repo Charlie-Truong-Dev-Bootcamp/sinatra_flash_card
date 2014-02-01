@@ -1,7 +1,4 @@
-require 'pry'
-
 get "/round/:deck_id" do
-  session[:user_id] = 1
   session[:round_id] = Round.create(user_id: session[:user_id]).id
   @cards = Card.create_deck(params[:deck_id])
   session[:cards] = @cards
@@ -25,6 +22,3 @@ post "/round/:deck_id" do
   end
 end
 
-get '/stats' do
-  erb :stats
-end
