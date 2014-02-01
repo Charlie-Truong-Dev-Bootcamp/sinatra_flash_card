@@ -12,7 +12,6 @@ gem 'thin'
 gem 'pry'
 
 gem 'json'
-gem 'net/http'
 gem 'activesupport'
 gem 'activerecord'
 
