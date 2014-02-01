@@ -6,7 +6,7 @@ class Card < ActiveRecord::Base
 
   def self.create_deck(deck_id)
     cards = Card.where(deck_id: deck_id).sample(10)
-    cards.map{ |card| card.id }
+    cards.map{ |card| {card_id: card.id, question: card.question, answer: card.answer} }
   end
 
   def check_answer(guess)
