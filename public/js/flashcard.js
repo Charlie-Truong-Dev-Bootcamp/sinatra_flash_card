@@ -44,6 +44,7 @@ $(document).ready(function() {
   });
 
   $("#score").click(function(){
+    $.post("/guess",{data: JSON.stringify(score)},redirect);
     console.log(score);
   });
 
@@ -68,4 +69,8 @@ var getCards = function(){
         }
     });
     return cards;
+};
+
+var redirect = function(response){
+  window.location.href = response.redirect;
 };
