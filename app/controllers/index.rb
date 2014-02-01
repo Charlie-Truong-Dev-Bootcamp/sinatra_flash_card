@@ -27,4 +27,7 @@ post '/sign_up' do
   redirect '/decks'
 end
 
-
+get '/log_out' do
+  session.clear
+  redirect '/'
+end
