@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :username, :password, presence: true
+
   has_many :rounds
 end
