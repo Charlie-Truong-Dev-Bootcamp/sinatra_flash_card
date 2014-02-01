@@ -17,6 +17,10 @@ $(document).ready(function() {
       $("#feedback").html("Correct!");
       score.push({card_id: cards[count].card_id, correctness: 1});
     }
+    else if($("#answer").val() === ""){
+      $("#feedback").html("You should have at least taken a guess!");
+      score.push({card_id: cards[count].card_id, correctness: 0});
+    }
     else{
       $("#feedback").html("Incorrect!  The answer was " + cards[count].answer);
       score.push({card_id: cards[count].card_id, correctness: -1});
