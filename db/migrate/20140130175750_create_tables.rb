@@ -31,6 +31,7 @@ class CreateTables < ActiveRecord::Migration
 
     create_table :decks do |t|
       t.string :name
+      t.string :instruction
       t.timestamps
     end
 
