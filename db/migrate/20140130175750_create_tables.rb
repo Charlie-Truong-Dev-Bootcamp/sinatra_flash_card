@@ -23,7 +23,7 @@ class CreateTables < ActiveRecord::Migration
 
     create_table :cards do |t|
       t.integer :deck_id
-      t.string :question
+      t.text :question
       t.string :answer
       t.belongs_to :deck
       t.timestamps

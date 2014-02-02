@@ -18,7 +18,12 @@
     border-radius: 3px; 
     margin: 0;
     z-index: 1;
+    line-height: 24px;
 }
+
+#progress-percentage {
+    text-align: center;
+};
 
 #next, #submit_score{
     margin: 0;

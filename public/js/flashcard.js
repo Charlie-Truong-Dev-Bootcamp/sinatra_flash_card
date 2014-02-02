@@ -77,5 +77,6 @@ var setProgress = function(cards, count){
   var current_card = count + 1;
   var progress = current_card/total;
   var progressBarWidth = progress * $("#bar").width();  
-  $("#progress").width(progressBarWidth).html((progress * 100)+ "% ");
+  $("#progress").width(progressBarWidth);
+  $("#progress-percentage").html((progress * 100)+ "% ");
 };
