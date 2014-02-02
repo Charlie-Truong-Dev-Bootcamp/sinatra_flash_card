@@ -50,6 +50,7 @@ $(document).ready(function() {
 
   $("#score").click(function(){
     $(window).unbind('beforeunload');
+    setProgress(cards,0);
     $.post("/guess",{data: JSON.stringify(score)},redirect);
   });
 
