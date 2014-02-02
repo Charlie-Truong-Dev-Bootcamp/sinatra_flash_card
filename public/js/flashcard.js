@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   $(document).keypress(function(e) {
     if (e.which == 13) {
-      $(".active")[0].click()
+      $(".active_flashcard")[0].click()
       e.preventDefault();
     }
   });
@@ -74,6 +74,6 @@ var setProgress = function(cards, count){
   var total = cards.length;
   var current_card = count + 1;
   var progress = current_card/total;
-  var progressBarWidth = progress * $(".bar").width();  
-  $(".progress").width(progressBarWidth).html((progress * 100)+ "% ");
+  var progressBarWidth = progress * $("#bar").width();  
+  $("#progress").width(progressBarWidth).html((progress * 100)+ "% ");
 };

@@ -1,4 +1,4 @@
-.bar{
+#bar{
     width: 300px;
     border: 1px solid #ddd;
     border-radius: 5px; 
@@ -9,7 +9,7 @@
     vertical-align:top;
 }
 
-.progress {
+#progress {
     color: #fff;
     text-align: right;
     height: 25px;
@@ -17,4 +17,5 @@
     background-color: #3366FF; 
     border-radius: 3px; 
     margin: 0;
+    z-index: 1;
 }

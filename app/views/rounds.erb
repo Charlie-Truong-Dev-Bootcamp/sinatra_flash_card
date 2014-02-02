@@ -1,17 +1,17 @@
-  <h4>Name this country's capital city ... </h4>
+  <h4>Name this country's capital city</h4>
 
   <h2 id="question"></h2>
 
   <form>
-    <input type="text" name="answer" id="answer">
-    <button type="button" id = "guess" class="active_flashcard">Guess</button>
-    <button type="button" id = "next" style="display: none">Next</button>
-    <button type="button" id = "score" style="display: none">Submit Score</button>
+    <input type="text" name="answer" id="answer" class="form-control"><br><br>
+    <button type="button" id = "guess" class="btn btn-lg btn-primary btn-block active_flashcard">Guess</button>
+    <button type="button" id = "next" class = "btn btn-lg btn-primary btn-block" style="display: none">Next</button>
+    <button type="button" id = "score" class = "btn btn-lg btn-primary btn-block" style="display: none">Submit Score</button>
   </form>
 
-
+  <br><br>
   <h5>Progress</h5>
-  <div class="bar"><div class="progress"></div></div>  
+  <div id="bar"><div id="progress"></div></div>  
 
   <p id="feedback"><p>
   <p id="cards" style="display: none"><%=@cards%></p>
