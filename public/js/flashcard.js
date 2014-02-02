@@ -12,7 +12,7 @@ $(document).ready(function() {
   $("#guess").click(function(){
     setProgress(cards,count);
     $(this).hide();
-    $(this).removeClass("active");
+    $(this).removeClass("active_flashcard");
     $("#answer").prop("disabled",true);
     if(cards[count].answer.toLowerCase() === $("#answer").val().toLowerCase()){
       $("#feedback").html("Correct!");
@@ -28,21 +28,21 @@ $(document).ready(function() {
     }
     if (count <9){  
       $("#next").show();
-      $("#next").addClass("active"); 
+      $("#next").addClass("active_flashcard"); 
     }
     else{
       $("#score").show();
-      $("#score").addClass("active");
+      $("#score").addClass("active_flashcard");
     }
   });
 
   $("#next").click(function(){
     count += 1;
     $(this).hide();
-    $(this).removeClass("active");
+    $(this).removeClass("active_flashcard");
     $("#answer").prop("disabled",false);
     $("#guess").show();
-    $("#guess").addClass("active");
+    $("#guess").addClass("active_flashcard");
     $("#feedback").html(" ");
     $("#question").html(cards[count].question);
     $("#answer").val("");
