@@ -10,6 +10,6 @@ post '/sign_in' do
 
     get_set_ip_and_address_in_sessions
 
-    redirect '/decks'
+    redirect '/decks#download'
   end
 end

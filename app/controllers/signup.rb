@@ -15,5 +15,5 @@ post '/signup' do
   get_set_ip_and_address_in_sessions
 
   new_user.save
-  redirect '/decks'
+  redirect '/decks#download'
 end

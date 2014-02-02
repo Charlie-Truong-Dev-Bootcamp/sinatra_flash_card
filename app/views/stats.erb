@@ -25,14 +25,14 @@
     <div class="row">
 
       <div class= "col-sm-4">
-        <a href = <%= "/round/" + @deck_id.to_s %>>
+        <a href = <%= "/round/#{@deck_id.to_s}#download" %>>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Play this deck again</button>
         </a>
       </div>
 
 
     <div class= "col-sm-4">
-      <a href = "/decks">
+      <a href = "/decks#download">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Choose another deck</button>
       </a>
     </div>
