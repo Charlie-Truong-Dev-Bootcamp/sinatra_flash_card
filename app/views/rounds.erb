@@ -2,7 +2,7 @@
 
   <h2 id="question"></h2>
 
-  <form>
+  <form id="flashcard">
     <input type="text" name="answer" id="answer" class="form-control"><br><br>
     <button type="button" id = "guess" class="btn btn-lg btn-primary btn-block active_flashcard">Guess</button>
     <button type="button" id = "next" class = "btn btn-lg btn-primary btn-block" style="display: none">Next</button>
@@ -13,7 +13,7 @@
   <h5>Progress</h5>
   <div id="bar"><div id="progress"></div></div>  
 
-  <p id="feedback"><p>
+  <p id="feedback">.<p>
   <p id="cards" style="display: none"><%=@cards%></p>
 
 <script src="/js/flashcard.js"></script>

@@ -43,14 +43,14 @@ $(document).ready(function() {
     $("#answer").prop("disabled",false);
     $("#guess").show();
     $("#guess").addClass("active_flashcard");
-    $("#feedback").html(" ");
+    $("#feedback").html(".");
     $("#question").html(cards[count].question);
     $("#answer").val("");
   });
 
   $("#score").click(function(){
     $(window).unbind('beforeunload');
-    setProgress(cards,0);
+    setProgress(cards,-1);
     $.post("/guess",{data: JSON.stringify(score)},redirect);
   });
 
