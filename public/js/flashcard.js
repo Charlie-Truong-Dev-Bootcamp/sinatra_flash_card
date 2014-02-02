@@ -28,13 +28,13 @@ $(document).ready(function() {
       $("#feedback").html("Incorrect!  The answer was " + cards[count].answer);
       score.push({card_id: cards[count].card_id, correctness: -1});
     }
-    if (count <9){  
+    if (count < (cards.length-1)){  
       $("#next").show();
       $("#next").addClass("active_flashcard"); 
     }
     else{
-      $("#score").show();
-      $("#score").addClass("active_flashcard");
+      $("#submit_score").show();
+      $("#submit_score").addClass("active_flashcard");
     }
   });
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
     $("#answer").val("");
   });
 
-  $("#score").click(function(){
+  $("#submit_score").click(function(){
     $(window).unbind('beforeunload');
     $.post("/guess",{data: JSON.stringify(score)},redirect);
   });
