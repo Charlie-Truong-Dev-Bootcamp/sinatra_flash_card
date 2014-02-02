@@ -8,7 +8,7 @@ class CreateTables < ActiveRecord::Migration
 
     create_table :rounds do |t|
       t.integer :user_id
-      t.belongs_to :users
+      t.belongs_to :user
       t.timestamps
     end
 

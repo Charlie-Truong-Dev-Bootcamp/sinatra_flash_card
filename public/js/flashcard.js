@@ -45,7 +45,7 @@ $(document).ready(function() {
     $("#answer").prop("disabled",false);
     $("#guess").show();
     $("#guess").addClass("active_flashcard");
-    $("#feedback").html(".");
+    $("#feedback").html(" ");
     $("#question").html(cards[count].question);
     $("#answer").val("");
   });

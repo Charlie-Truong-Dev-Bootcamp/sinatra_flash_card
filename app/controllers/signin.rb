@@ -6,7 +6,7 @@ post '/sign_in' do
     redirect '/'
   else
     attempted_user.password == params[:password]
-    session[:username] = attempted_user[:username]
+    session[:user_id] = attempted_user.id
 
     get_set_ip_and_address_in_sessions
 
