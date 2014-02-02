@@ -1,0 +1,3 @@
+get '/getip' do
+
+end

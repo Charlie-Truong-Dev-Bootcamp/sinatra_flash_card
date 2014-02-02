@@ -11,6 +11,7 @@ gem 'sinatra-contrib'
 gem 'thin'
 gem 'pry'
 
+gem 'json'
 gem 'activesupport'
 gem 'activerecord'
 
