@@ -3,7 +3,9 @@ $("#score").hide();
 $(document).ready(function() {
 
   var cards = JSON.parse($("#cards").html());
+  setProgress(cards,-1);
   var count = 0;
+
   var score = [];
 
   $("#question").html(cards[count].question);
@@ -50,7 +52,6 @@ $(document).ready(function() {
 
   $("#score").click(function(){
     $(window).unbind('beforeunload');
-    setProgress(cards,-1);
     $.post("/guess",{data: JSON.stringify(score)},redirect);
   });
 
