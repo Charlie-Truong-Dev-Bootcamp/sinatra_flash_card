@@ -2,7 +2,7 @@ $("#next").hide();
 $("#score").hide();
 $(document).ready(function() {
 
-  var cards = getCards();
+  var cards = JSON.parse($("#cards").html());
   var count = 0;
   var score = [];
 
@@ -51,7 +51,6 @@ $(document).ready(function() {
   $("#score").click(function(){
     $(window).unbind('beforeunload');
     $.post("/guess",{data: JSON.stringify(score)},redirect);
-    console.log(score);
   });
 
   $(document).keypress(function(e) {
@@ -66,20 +65,6 @@ $(document).ready(function() {
   });
 
 });
-
-var getCards = function(){
-    var cards = null;
-    $.ajax({
-        type: "GET",
-        url: "/randomcards",
-        async:false,
-        data: {location: window.location.pathname},
-        success: function(response){
-          cards = response;
-        }
-    });
-    return cards;
-};
 
 var redirect = function(response){
   window.location.href = response.redirect;
