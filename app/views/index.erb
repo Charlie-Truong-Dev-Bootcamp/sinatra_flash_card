@@ -1,9 +1,12 @@
 
   <form class="form-signin" name="input" action="/sign_in" method="post">
-    <h2 class="form-signin-heading" style="text-align: center">Please sign in, or <a href="/sign_up">create an account</a></h2>
+    <h2 class="form-signin-heading" style="text-align: center; color: #FFFFFF">Please sign in, or <a href="/sign_up" style="text-decoration: none; color: #B76EB8">create an account</a></h2>
     <input type="text" class="form-control" placeholder="Username" name="user" required autofocus>
     <input type="password" class="form-control" placeholder="Password" name="password" required>
     <br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" id="signin" type="submit">Sign in</button>
   </form>
 
+  <% if @session_active != {} %>
+    <a class="stats_a" href = "/signout">Sign out</a>
+  <% end %>

@@ -1,7 +1,6 @@
 enable :sessions
 
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
@@ -28,6 +27,11 @@ post '/sign_up' do
   session[:username] = new_user[:username]
   new_user.save
   redirect '/decks'
+end
+
+get '/signout' do
+  session.clear
+  erb :index
 end
 
 

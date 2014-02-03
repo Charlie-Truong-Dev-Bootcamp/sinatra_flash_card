@@ -1,4 +1,4 @@
-<div class="container">
+<div id="stats">
   <%if @deck_id %>
     <div>
       <div><h2>This round</h2></div>
@@ -10,14 +10,14 @@
   <%if @global_stats %>
   <div>
       <div><h2>All rounds</h2></div>
-      <div>Correct: </div><div><%= @global_correct %>, (<%= @global_percent %>)%</div>
-      <div>Incorrect: </div><div><%= @global_incorrect %></div>
-      <div>Skipped: </div><div><%= @global_skipped %></div>
+      <div><p>Correct: </div><div><%= @global_correct %>, (<%= @global_percent %>)%</p></div>
+      <div><p>Incorrect: </div><div><%= @global_incorrect %></p></div>
+      <div><p>Skipped: </div><div><%= @global_skipped %></p></div>
     </div>
   <% end %>
   <%if @deck_id %>
-    <a href = <%= "/round/" + @deck_id.to_s %>>Play this deck again</a>
+    <a class="stats_a" href= <%= "/round/" + @deck_id.to_s %>>Play this deck again</a>
   <% end %>
-  <a href = "/decks">Choose another deck</a>
-  <a href = "/signout">Sign out</a>
+  <a class="stats_a" href = "/decks">Choose another deck</a>
+  <a class="stats_a" href = "/signout">Sign out</a>
 </div>

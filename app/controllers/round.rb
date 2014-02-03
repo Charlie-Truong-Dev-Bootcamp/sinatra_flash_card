@@ -15,10 +15,24 @@ post "/round/:deck_id" do
   session[:num] += 1
   if session[:num] < 10
     @card = current_card
-    erb :rounds
+    content_type :json
+    {:feedback => feedback_display(@feedback,@answer), :card => @card.question,
+     :num => session[:num]}.to_json
   else
     Guess.add_guesses(session[:cards], session[:round_id], session[:correctness])
-    redirect ('/stats')
+    content_type :json
+    {:feedback => feedback_display(@feedback,@answer),
+     :redirect => "http://http://127.0.0.1:9393/stats"}.to_json
   end
 end
+
+
+
+
+
+
+
+
+
+
 

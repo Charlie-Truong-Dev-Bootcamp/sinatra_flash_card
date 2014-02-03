@@ -1,9 +1,11 @@
 <h4>Choose a deck:</h4>
 
-<ul>
+<ul style="padding-top: 10%">
+<% i=1 %>
 
   <% @decks.each do |deck| %>
-  <li><a href="/round/<%= deck.id %>" > <%= deck.name %> </a></li>
+  <li style="list-style: none"><a href="/round/<%= deck.id %>" style="text-decoration: none; color: #FFFFFF; font-family: 'Ubuntu', sans-serif; font-size: 2em;"> <%= "#{i}.
+  #{deck.name}" %> </a></li>
   <% end %>
 
 </ul>
